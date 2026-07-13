@@ -390,6 +390,7 @@ pub fn render_message_streaming(
                         flush_markdown_buffer(buffer, theme, text_at_line_start);
                         hide_thinking();
                         println!("\n{} {}", style("·").dim(), &notification.msg);
+                        *text_at_line_start = true;
                     }
                     SystemNotificationType::CreditsExhausted => {
                         flush_markdown_buffer(buffer, theme, text_at_line_start);
